@@ -1,11 +1,16 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from "next";
 
+export async function getData(){
+  const response = await fetch(`https://next-api-endopoint-production.up.railway.app/api/products`);
+  const data = await response.json();
+  return data;
+}
+
 export default function handler(
   req: NextApiRequest,
   res: NextApiResponse<Product[]>,
   ) {
-  fetch(`https://next-api-endopoint-production.up.railway.app/api/products`)
-  .then(response => response.json())
+  getData()
   .then(data => {res.status(200).json(data)})
 };

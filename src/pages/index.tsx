@@ -4,6 +4,7 @@ import { Inter } from "next/font/google";
 import styles from "@/styles/Home.module.css";
 import { InferGetServerSidePropsType } from "next";
 import { link } from "fs";
+import { getData } from "./api/products";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -11,8 +12,7 @@ console.log(process.env.NODE_ENV);
 
 
 export const getServerSideProps = ( async () => {
-  const res = await fetch('http://localhost:3000/api/products');
-  const products: Product[] = await res.json();
+  const products: Product[] = await getData();
   return { props: { products } };
 })
 
