@@ -43,7 +43,7 @@ export default function Home({ products }: { products: Product[] }) {
             <li key={product.id}>
               <div className={styles.card}>
                 <h2 style={{ height: '180px' }}>{product.title}</h2>
-                <img src={product.thumbnail} alt="product image" />
+                {/* <img src={product.thumbnail} alt="product image" /> */}
               </div>
             </li>
           ))}
