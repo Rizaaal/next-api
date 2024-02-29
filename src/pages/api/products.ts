@@ -5,7 +5,7 @@ export default function handler(
   req: NextApiRequest,
   res: NextApiResponse<Product[]>,
   ) {
-  fetch(`http://localhost:3001/api/products`)
+  fetch(`https://next-api-endopoint-production.up.railway.app/api/products`)
   .then(response => response.json())
   .then(data => {res.status(200).json(data)})
 };
