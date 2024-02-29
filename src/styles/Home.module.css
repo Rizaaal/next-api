@@ -42,6 +42,7 @@
 .grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(25%, auto));
+  gap: 10px;
   max-width: 100%;
   width: var(--max-width);
 }
@@ -49,9 +50,13 @@
 .card {
   padding: 1rem 1.2rem;
   border-radius: var(--border-radius);
-  background: rgba(var(--card-rgb), 0);
-  border: 1px solid rgba(var(--card-border-rgb), 0);
+  background: rgba(var(--card-rgb));
+  border: 1px solid rgba(var(--card-border-rgb));
   transition: background 200ms, border 200ms;
+}
+
+.card:hover {
+  cursor: pointer;
 }
 
 .card span {
