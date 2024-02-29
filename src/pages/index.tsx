@@ -7,11 +7,15 @@ import { link } from "fs";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export const getServerSideProps = (async () => {
+console.log(process.env.NODE_ENV);
+
+
+export const getServerSideProps = ( async () => {
   const res = await fetch('http://localhost:3000/api/products');
   const products: Product[] = await res.json();
   return { props: { products } };
 })
+
 
 export default function Home({ products }: { products: Product[] }) {
   return (
@@ -38,8 +42,8 @@ export default function Home({ products }: { products: Product[] }) {
           {products.map((product: Product) => (
             <li key={product.id}>
               <div className={styles.card}>
-                <h2 style={{height: '180px'}}>{product.title}</h2>
-                <img src={product.thumbnail} alt="product image" />              
+                <h2 style={{ height: '180px' }}>{product.title}</h2>
+                <img src={product.thumbnail} alt="product image" />
               </div>
             </li>
           ))}
