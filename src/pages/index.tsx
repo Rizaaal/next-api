@@ -47,7 +47,7 @@ export default function Home({ products }: { products: Product[] }) {
             priority
           />
         </div>
-        {/* <ul className={styles.grid}>
+        <ul className={styles.grid}>
           {products.map((product: Product) => (
             <li key={product.id}>
               <div className={styles.card}>
@@ -55,7 +55,7 @@ export default function Home({ products }: { products: Product[] }) {
               </div>
             </li>
           ))}
-        </ul> */}
+        </ul>
       </main>
     </>
   );
