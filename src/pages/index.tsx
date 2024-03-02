@@ -17,10 +17,10 @@ console.log('current host: ', host);
 
 
 export const getServerSideProps = ( async () => {
-  // const products: Product[] = await getData();
+  const products: Product[] = await getData();
 
-  const res = await fetch(`${host}api/products`);
-  const products: Product[] = await res.json();
+  // const res = await fetch(`${host}api/products`);
+  // const products: Product[] = await res;
   
   return { props: { products } };
 })
