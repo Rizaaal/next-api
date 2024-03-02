@@ -13,20 +13,20 @@ const host =
   ? 'http://localhost:3000/' 
   : process.env.NEXT_PUBLIC_URL;
 
-console.log(host);
+console.log('current host: ', host);
 
 
-// export const getServerSideProps = ( async () => {
-//   // const products: Product[] = await getData();
+export const getServerSideProps = ( async () => {
+  // const products: Product[] = await getData();
 
-//   const res = await fetch(`${host}api/products`);
-//   const products: Product[] = await res.json();
+  const res = await fetch(`${host}api/products`);
+  const products: Product[] = await res.json();
   
-//   return { props: { products } };
-// })
+  return { props: { products } };
+})
 
 
-export default function Home(/*{ products }: { products: Product[] }*/) {
+export default function Home({ products }: { products: Product[] }) {
   return (
     <>
       <Head>
