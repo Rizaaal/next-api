@@ -6,7 +6,7 @@ import styles from "@/styles/Home.module.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
-console.log(process.env.NODE_ENV);
+console.log(process.env.NEXT_PUBLIC_URL);
 
 
 export const getServerSideProps = ( async () => {
