@@ -1,4 +1,3 @@
-// Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from "next";
 
 export async function getData(){
@@ -12,5 +11,5 @@ export default function handler(
   res: NextApiResponse<Product[]>,
   ) {
   getData()
-  .then(data => {res.status(200).json(data)})
+  .then(data => {res.status(200).send(data)})
 };
