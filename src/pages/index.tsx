@@ -16,17 +16,17 @@ const host =
 console.log(host);
 
 
-export const getServerSideProps = ( async () => {
-  // const products: Product[] = await getData();
+// export const getServerSideProps = ( async () => {
+//   // const products: Product[] = await getData();
 
-  const res = await fetch(`${host}api/products`);
-  const products: Product[] = await res.json();
+//   const res = await fetch(`${host}api/products`);
+//   const products: Product[] = await res.json();
   
-  return { props: { products } };
-})
+//   return { props: { products } };
+// })
 
 
-export default function Home({ products }: { products: Product[] }) {
+export default function Home(/*{ products }: { products: Product[] }*/) {
   return (
     <>
       <Head>
@@ -47,7 +47,7 @@ export default function Home({ products }: { products: Product[] }) {
             priority
           />
         </div>
-        <ul className={styles.grid}>
+        {/* <ul className={styles.grid}>
           {products.map((product: Product) => (
             <li key={product.id}>
               <div className={styles.card}>
@@ -55,7 +55,7 @@ export default function Home({ products }: { products: Product[] }) {
               </div>
             </li>
           ))}
-        </ul>
+        </ul> */}
       </main>
     </>
   );
